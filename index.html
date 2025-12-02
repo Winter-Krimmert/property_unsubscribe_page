@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unsubscribe | Terra Multa</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 60px 20px;
+      background: linear-gradient(to right, #0e0e0e, #1a1a1a);
+      font-family: 'Inter', sans-serif;
+      color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #111;
+      max-width: 700px;
+      width: 100%;
+      padding: 60px 70px;
+      border: 1px solid #1B4E4B;
+      border-radius: 0;
+      box-shadow: 
+        0 12px 20px rgba(0,0,0,0.6),
+        inset 0 0 0 1px rgba(38,152,145,0.06);
+      text-align: center;
+      position: relative;
+    }
+
+    /* MATCHED LOGO BLOCK */
+    .logo-container {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .logo-container img {
+      max-width: 800px;
+      width: 100%;
+      height: auto;
+      filter: brightness(1.15) contrast(1.05);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #269891;
+      border-bottom: 1px solid #1B4E4B;
+      padding-bottom: 20px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      background-color: #269891;
+      border: none;
+      padding: 18px 24px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #fff;
+      border-radius: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      box-shadow:
+        0 4px 8px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #226763;
+      box-shadow:
+        0 3px 6px rgba(0,0,0,0.5),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    button:active {
+      background-color: #1B4E4B;
+      transform: translateY(2px);
+      box-shadow:
+        inset 0 2px 5px rgba(0,0,0,0.5),
+        0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    /* SUCCESS BANNER */
+    #gucciSuccess {
+      position: fixed;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #1B4E4B, #269891);
+      color: #fff;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+      z-index: 9999;
+      transition: top 0.5s ease, opacity 0.5s ease;
+      max-width: 90%;
+      opacity: 0;
+    }
+
+    #gucciSuccess.show {
+      top: 20px;
+      opacity: 1;
+    }
+
+    #closeBanner {
+      all: unset;
+      font-size: 1.5rem;
+      cursor: pointer;
+      margin-left: 10px;
+      color: #eee;
+    }
+
+    #closeBanner:hover {
+      opacity: 0.7;
+    }
+
+    #statusMessage {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #2ecc71;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    #statusMessage.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SUCCESS BANNER -->
+  <div id="gucciSuccess">
+    <svg width="28" height="28" stroke="#2ecc71" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 6L9 17l-5-5" />
+    </svg>
+    <span>Unsubscribe Request Received</span>
+    <button id="closeBanner">&times;</button>
+  </div>
+
+  <div class="container">
+
+    <!-- MATCHED LOGO BLOCK -->
+    <div class="logo-container">
+      <img src="https://res.cloudinary.com/dcmvpmbsc/image/upload/v1744150928/TME_Mar3.2024_iockmn.jpg" alt="Terra Multa Enterprises Logo" />
+    </div>
+
+    <h2>Unsubscribe</h2>
+    <p>You will no longer receive emails from Terra Multa Enterprises LLC.</p>
+
+    <form id="unsubscribeForm">
+      <input type="hidden" id="contact_id" name="contact_id" value="">
+      <button type="submit">Unsubscribe</button>
+    </form>
+
+    <div id="statusMessage"></div>
+
+    <!-- COPYRIGHT MATCHED EXACTLY -->
+    <p style="text-align: center; font-size: 0.85rem; color: #777; margin-top: 40px;">
+      © 2025 Terra Multa Enterprises LLC. All rights reserved.
+    </p>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+
+
+</body>
+</html>
